@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "Team Generator",
+    "slug": "firstApp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/teamIcon.png",
+    "scheme": "firstapp",
+    "userInterfaceStyle": "automatic",    
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.tGen",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/teamIcon.png",
+        "backgroundColor": "#ffffff"
+      },      
+      "package": "com.anonymous.tGen"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/teamIcon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ],
+      "expo-audio"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "254533dc-ff8f-47ce-99ea-27d6ae51a718"
+      }
+    }
+  }
+}

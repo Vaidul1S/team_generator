@@ -1,0 +1,11 @@
+# Visual Studio cache/build artifacts
+.vs/
+*.ipch
+*.pch
+*.pdb
+*.obj
+*.suo
+
+# Other large/unnecessary directories
+node_modules/
+.git/
