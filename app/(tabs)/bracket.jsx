@@ -82,6 +82,7 @@ export default function Bracket() {
     return (
         <ScrollView>
             <View style={styles.container}>
+
                 <View style={styles.col}>
                     <View style={styles.row}>
                         <TouchableOpacity onPress={_ => promoteTeam(bracket[0])} style={styles.button}>
@@ -176,13 +177,13 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'column',
         alignContent: 'space-around',
-        flexWrap: 'wrap',   
-        width: '100%',    
+        flexWrap: 'wrap',
+        width: '100%',
         backgroundColor: '#40b0cc80',
     },
     col: {
         justifyContent: 'space-around',
-        height: '100%',        
+        height: '100%',
         padding: '2%',
         width: '33%',
         backgroundColor: 'none',
@@ -192,7 +193,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         gap: '3%',
         width: '100%',
-        backgroundColor: 'none', 
+        backgroundColor: 'none',
     },
     text: {
         textAlign: 'center',
