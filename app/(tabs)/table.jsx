@@ -146,7 +146,7 @@ export default function Table() {
                 team[4].matches[3] = 2;
             }
 
-
+            // reverse, not nessecery
             if (team[1].matches[0] == 2) {
                 team[0].matches[1] = 1;
             } else if (team[1].matches[0] == 1) {
@@ -194,10 +194,8 @@ export default function Table() {
                 })
             })
         });
-
         setGroups(updatedGroups);
-
-    }
+    };
 
     const changeTeamName = (grIndex, gIndex, text) => {
         const updatedGroups = [...groups];
@@ -369,7 +367,7 @@ const styles = StyleSheet.create({
     },
     modal: {
         alignSelf: 'center',
-        justifyContent: 'center',           
+        justifyContent: 'center',
     },
     card: {
         alignSelf: 'center',
