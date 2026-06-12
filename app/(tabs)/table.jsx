@@ -8,14 +8,7 @@ export default function Table() {
     const [groups, setGroups] = useState([]);
     const [group, setGroup] = useState(['', '', '', '']);
     const [showAddGroup, setShowAddGroup] = useState(false);
-    const [deleteGroup, setDeleteGroup] = useState(false);
-
-    const [groupA, setGroupA] = useState([
-        { name: 'Degaiciai', r1: '#', r2: 0, r3: 0, r4: 0, points: 0 },
-        { name: 'Gadunavas', r1: 0, r2: '#', r3: 0, r4: 0, points: 1 },
-        { name: 'Nevarenai', r1: 0, r2: 0, r3: '#', r4: 0, points: 2 },
-        { name: 'Viesvenai', r1: 0, r2: 0, r3: 0, r4: '#', points: 3 }
-    ]);
+    const [deleteGroup, setDeleteGroup] = useState(false);  
 
     useEffect(() => {
         const loadData = async () => {
@@ -65,7 +58,7 @@ export default function Table() {
     }
 
     const makeTable = _ => {
-        return group.map(el => ({ name: el, matches: group.map(_ => 0), points: 0, place: 'TBD' }));
+        return group.map(el => ({ name: el, matches: group.map(_ => '-'), points: 0, place: 'TBD' }));
     }
 
     const addGroup = _ => {
@@ -86,6 +79,67 @@ export default function Table() {
         updatedGroups[grIndex][gIndex].matches[matchIndex] = value;
 
         updatedGroups.forEach(team => {
+            if (team[0].matches[1] == 3) {
+                team[1].matches[0] = 0;
+            } else if (team[0].matches[1] == 0) {
+                team[1].matches[0] = 3;
+            }
+
+            if (team[0].matches[2] == 3) {
+                team[2].matches[0] = 0;
+            } else if (team[0].matches[2] == 0) {
+                team[2].matches[0] = 3;
+            }
+
+            if (team[0].matches[3] == 3) {
+                team[3].matches[0] = 0;
+            } else if (team[0].matches[3] == 0) {
+                team[3].matches[0] = 3;
+            }
+
+            if (team[1].matches[2] == 3) {
+                team[2].matches[1] = 0;
+            } else if (team[1].matches[2] == 0) {
+                team[2].matches[1] = 3;
+            }
+
+            if (team[1].matches[3] == 3) {
+                team[3].matches[1] = 0;
+            } else if (team[1].matches[3] == 0) {
+                team[3].matches[1] = 3;
+            }
+
+            if (team[2].matches[3] == 3) {
+                team[3].matches[2] = 0;
+            } else if (team[2].matches[3] == 0) {
+                team[3].matches[2] = 3;
+            }
+
+            if (team[0].matches[4] == 3) {
+                team[4].matches[0] = 0;
+            } else if (team[0].matches[4] == 0) {
+                team[4].matches[0] = 3;
+            }
+
+            if (team[1].matches[4] == 3) {
+                team[4].matches[1] = 0;
+            } else if (team[1].matches[4] == 0) {
+                team[4].matches[1] = 3;
+            }
+
+            if (team[2].matches[4] == 3) {
+                team[4].matches[2] = 0;
+            } else if (team[2].matches[4] == 0) {
+                team[4].matches[2] = 3;
+            }
+
+            if (team[3].matches[4] == 3) {
+                team[4].matches[3] = 0;
+            } else if (team[3].matches[4] == 0) {
+                team[4].matches[3] = 3;
+            }
+
+
             if (team[0].matches[1] == 2) {
                 team[1].matches[0] = 1;
             } else if (team[0].matches[1] == 1) {
