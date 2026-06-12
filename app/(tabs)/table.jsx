@@ -139,7 +139,7 @@ export default function Table() {
                 team[4].matches[3] = 3;
             }
 
-
+            // OT (3 sets)
             if (team[0].matches[1] == 2) {
                 team[1].matches[0] = 1;
             } else if (team[0].matches[1] == 1) {
