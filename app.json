@@ -1,12 +1,12 @@
 {
   "expo": {
     "name": "Team Generator",
-    "slug": "firstApp",
-    "version": "1.0.0",
+    "slug": "TeamGenerator",
+    "version": "1.0.5",
     "orientation": "portrait",
     "icon": "./assets/images/teamIcon.png",
-    "scheme": "firstapp",
-    "userInterfaceStyle": "automatic",    
+    "scheme": "TeamGenerator",
+    "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.anonymous.tGen",
@@ -18,8 +18,12 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/teamIcon.png",
         "backgroundColor": "#ffffff"
-      },      
-      "package": "com.anonymous.tGen"
+      },
+      "package": "com.anonymous.tGen",
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -45,7 +49,7 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "254533dc-ff8f-47ce-99ea-27d6ae51a718"
+        "projectId": "b36c1f3a-c2e8-4e79-9435-4b856fc8dc6b"
       }
     }
   }
