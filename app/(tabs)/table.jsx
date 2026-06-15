@@ -8,7 +8,7 @@ export default function Table() {
     const [groups, setGroups] = useState([]);
     const [group, setGroup] = useState(['', '', '', '']);
     const [showAddGroup, setShowAddGroup] = useState(false);
-    const [deleteGroup, setDeleteGroup] = useState(false);  
+    const [deleteGroup, setDeleteGroup] = useState(false);
 
     useEffect(() => {
         const loadData = async () => {
@@ -79,6 +79,8 @@ export default function Table() {
         updatedGroups[grIndex][gIndex].matches[matchIndex] = value;
 
         updatedGroups.forEach(team => {
+
+            // 2 sets 2:0
             if (team[0].matches[1] == 3) {
                 team[1].matches[0] = 0;
             } else if (team[0].matches[1] == 0) {
@@ -139,7 +141,7 @@ export default function Table() {
                 team[4].matches[3] = 3;
             }
 
-            // OT (3 sets)
+            // 3 sets 2:1
             if (team[0].matches[1] == 2) {
                 team[1].matches[0] = 1;
             } else if (team[0].matches[1] == 1) {
@@ -236,6 +238,32 @@ export default function Table() {
             } else if (team[3].matches[2] == 1) {
                 team[2].matches[3] = 2;
             }
+
+            if (team[4]) {
+                if (team[4].matches[0] == 2) {
+                    team[0].matches[4] = 1;
+                } else if (team[4].matches[0] == 1) {
+                    team[0].matches[4] = 2;
+                }
+
+                if (team[4].matches[1] == 2) {
+                    team[1].matches[4] = 1;
+                } else if (team[4].matches[1] == 1) {
+                    team[4].matches[1] = 2;
+                }
+
+                if (team[4].matches[2] == 2) {
+                    team[2].matches[4] = 1;
+                } else if (team[4].matches[2] == 1) {
+                    team[2].matches[4] = 2;
+                }
+
+                if (team[4].matches[3] == 2) {
+                    team[3].matches[4] = 1;
+                } else if (team[4].matches[3] == 1) {
+                    team[3].matches[4] = 2;
+                }
+            }
         });
 
         updatedGroups.forEach(group => {
@@ -330,7 +358,7 @@ export default function Table() {
                                 <TouchableOpacity onPress={_ => removeTeam(index)}><Text style={styles.buttonR}>Remove</Text></TouchableOpacity>
                             </View>)}
 
-                        <TouchableOpacity onPress={_ => setGroup(g => [...g, ''])}><Text style={styles.button}>Add Slot</Text></TouchableOpacity>
+                        <TouchableOpacity onPress={_ => setGroup(g => [...g, ''])}><Text style={styles.button}>Add Team</Text></TouchableOpacity>
                         <View style={styles.bin}>
                             <TouchableOpacity onPress={addGroup}><Text style={styles.button}>Create</Text></TouchableOpacity>
                             <TouchableOpacity onPress={_ => setShowAddGroup(false)}><Text style={styles.buttonB}>Back</Text></TouchableOpacity>
