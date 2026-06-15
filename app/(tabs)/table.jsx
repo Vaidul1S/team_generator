@@ -80,7 +80,7 @@ export default function Table() {
 
         updatedGroups.forEach(team => {
 
-            // 2 sets 2:0
+            // ---------------------------------------------------------- 2 sets 2:0 ----------------------------------------------------------
             if (team[0].matches[1] == 3) {
                 team[1].matches[0] = 0;
             } else if (team[0].matches[1] == 0) {
@@ -141,7 +141,7 @@ export default function Table() {
                 team[4].matches[3] = 3;
             }
 
-            // 3 sets 2:1
+            // ---------------------------------------------------------- 3 sets 2:1 ----------------------------------------------------------
             if (team[0].matches[1] == 2) {
                 team[1].matches[0] = 1;
             } else if (team[0].matches[1] == 1) {
@@ -202,7 +202,71 @@ export default function Table() {
                 team[4].matches[3] = 2;
             }
 
-            // reverse, not nessecery
+            // ---------------------------------------------------------- reverse, not nessecery ----------------------------------------------------------
+            // ---------------------------------------------------------- 2 sets 2:0 ----------------------------------------------------------             
+            if (team[1].matches[0] == 3) {
+                team[0].matches[1] = 0;
+            } else if (team[1].matches[0] == 0) {
+                team[0].matches[1] = 3;
+            }
+
+            if (team[2].matches[0] == 3) {
+                team[0].matches[2] = 0;
+            } else if (team[2].matches[0] == 0) {
+                team[0].matches[2] = 3;
+            }
+
+            if (team[3].matches[0] == 3) {
+                team[0].matches[3] = 0;
+            } else if (team[3].matches[0] == 0) {
+                team[0].matches[3] = 3;
+            }
+
+            if (team[2].matches[1] == 3) {
+                team[1].matches[2] = 0;
+            } else if (team[2].matches[1] == 0) {
+                team[1].matches[2] = 3;
+            }
+
+            if (team[3].matches[1] == 3) {
+                team[1].matches[3] = 0;
+            } else if (team[3].matches[1] == 0) {
+                team[1].matches[3] = 3;
+            }
+
+            if (team[3].matches[2] == 3) {
+                team[2].matches[3] = 0;
+            } else if (team[3].matches[2] == 0) {
+                team[2].matches[3] = 3;
+            }
+
+            if (team[4]) {
+                if (team[4].matches[0] == 3) {
+                    team[0].matches[4] = 0;
+                } else if (team[4].matches[0] == 0) {
+                    team[0].matches[4] = 3;
+                }
+
+                if (team[4].matches[1] == 3) {
+                    team[1].matches[4] = 0;
+                } else if (team[4].matches[1] == 0) {
+                    team[4].matches[1] = 3;
+                }
+
+                if (team[4].matches[2] == 3) {
+                    team[2].matches[4] = 0;
+                } else if (team[4].matches[2] == 0) {
+                    team[2].matches[4] = 3;
+                }
+
+                if (team[4].matches[3] == 3) {
+                    team[3].matches[4] = 0;
+                } else if (team[4].matches[3] == 0) {
+                    team[3].matches[4] = 3;
+                }
+            }
+
+            // ---------------------------------------------------------- 3 sets 2:1 ----------------------------------------------------------           
             if (team[1].matches[0] == 2) {
                 team[0].matches[1] = 1;
             } else if (team[1].matches[0] == 1) {
