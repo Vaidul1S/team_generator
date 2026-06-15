@@ -1,21 +1,22 @@
-import { Text, StyleSheet, Image, SafeAreaView} from 'react-native';
+import { Text, StyleSheet, Image, SafeAreaView } from 'react-native';
 import { Link } from 'expo-router';
 import React from 'react';
 
 export default function Credits() {
+  document.title = "Credits";
 
   return (
     <SafeAreaView style={styles.container}>
       <Image
-      source={require("../../assets/images/gg.jpg")}
-            style={styles.image}/>
+        source={require("../../assets/images/gg.jpg")}
+        style={styles.image} />
       <Text style={styles.text}>Simple team generator for pairing people into teams.</Text>
       <Text style={styles.text}>To delete name press long on a selected name.</Text>
       <Text style={styles.text}>Version 1.05</Text>
       <Text style={styles.text}>Added Tornament Table</Text>
       <Text style={styles.text}>Added Tornament Bracket</Text>
       <Link style={styles.link} href='https://github.com/Vaidul1S' target='_blank'>GitHub Link</Link>
-      <Text style={styles.text}>&copy; Vaidul1s {new Date().getFullYear()}</Text>      
+      <Text style={styles.text}>&copy; Vaidul1s {new Date().getFullYear()}</Text>
     </SafeAreaView>
   )
 }
@@ -42,6 +43,6 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
     color: 'lightblue',
     alignSelf: 'center',
-    margin: 20,    
-  },  
+    margin: 20,
+  },
 })

@@ -6,8 +6,8 @@ import { useAudioPlayer } from 'expo-audio';
 const click = require('../../assets/sounds/click2.mp3');
 
 export default function Generator() {
-  
   document.title = "Team Generator";
+  
   const inputRef = useRef(null);
   const [pool, setPool] = useState([]);
   const [name, setName] = useState("");

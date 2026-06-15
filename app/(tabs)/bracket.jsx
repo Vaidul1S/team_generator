@@ -3,6 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect, useState } from "react";
 
 export default function Bracket() {
+    document.title = "Team Bracket";
 
     const [groups, setGroups] = useState([]);
     const [bracket, setBracket] = useState([]);
