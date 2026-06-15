@@ -6,7 +6,8 @@ import { useAudioPlayer } from 'expo-audio';
 const click = require('../../assets/sounds/click2.mp3');
 
 export default function Generator() {
-
+  
+  document.title = "Team Generator";
   const inputRef = useRef(null);
   const [pool, setPool] = useState([]);
   const [name, setName] = useState("");
@@ -14,8 +15,6 @@ export default function Generator() {
   const [teams, setTeams] = useState([]);
   const [size, setSize] = useState(2);
   const player = useAudioPlayer(click);
-
-  document.title = "Team Generator";
 
   useEffect(() => {
     const loadData = async () => {

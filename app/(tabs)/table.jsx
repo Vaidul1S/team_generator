@@ -3,7 +3,7 @@ import { Modal, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Table() {
-
+    document.title = "Team Table";
     const letter = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
     const [groups, setGroups] = useState([]);
     const [group, setGroup] = useState(['', '', '', '']);
