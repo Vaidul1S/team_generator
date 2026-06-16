@@ -3,7 +3,6 @@ import { Link } from 'expo-router';
 import React from 'react';
 
 export default function Credits() {
-  document.title = "Credits";
 
   return (
     <SafeAreaView style={styles.container}>

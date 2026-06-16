@@ -4,7 +4,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Table() {
-    document.title = "Team Table";
 
     const letter = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
     const [groups, setGroups] = useState([]);

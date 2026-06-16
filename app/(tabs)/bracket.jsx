@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Bracket() {
-    document.title = "Team Bracket";
 
     const [groups, setGroups] = useState([]);
     const [bracket, setBracket] = useState([]);
