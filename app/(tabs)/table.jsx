@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { Modal, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Table() {
     document.title = "Team Table";
-    
+
     const letter = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
     const [groups, setGroups] = useState([]);
     const [group, setGroup] = useState(['', '', '', '']);
@@ -369,77 +370,80 @@ export default function Table() {
     }
 
     return (
-        <ScrollView >
-            <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
+            <ScrollView>
                 <View >
-                    {groups.map((gr, grIndex) =>
-                        <View key={grIndex}>
-                            <Text style={styles.name}>{letter[grIndex]} Group</Text>
-                            <View style={styles.group}>
-                                {gr.map((g, gIndex) =>
-                                    <View key={gIndex} style={styles.team}>
-                                        <TextInput style={styles.name} value={g.name} onChangeText={text => changeTeamName(grIndex, gIndex, text)} />
-                                        {g.matches.map((match, matchIndex) =>
-                                            <TextInput
-                                                key={matchIndex}
-                                                style={styles.result}
-                                                value={String(match)}
-                                                onChangeText={text => updateMatch(grIndex, gIndex, matchIndex, text.trim())}
-                                                keyboardType="numeric" />
-                                        )}
-                                        <Text style={styles.points}>{g.points}</Text>
-                                        <Text style={styles.points}>{g.place}</Text>
-                                    </View>)}
-                            </View>
-                            <View style={styles.bin}>
-                                <TouchableOpacity onPress={e => calcPlaces(grIndex)}><Text style={styles.buttonB}>Calc</Text></TouchableOpacity>
-                                <TouchableOpacity onPress={_ => setDeleteGroup(true)}><Text style={styles.buttonR}>Delete</Text></TouchableOpacity>
-                            </View>
-
-                            <Modal visible={deleteGroup} animationType="fade" style={styles.modal}>
-                                <View style={styles.card}>
-                                    <Text style={styles.title}>Are you sure?</Text>
-                                    <View style={styles.bin}>
-                                        <TouchableOpacity onPress={_ => removeGroup(grIndex)}><Text style={styles.buttonR}>Yes</Text></TouchableOpacity>
-                                        <TouchableOpacity onPress={_ => setDeleteGroup(false)}><Text style={styles.buttonB}>Back</Text></TouchableOpacity>
-                                    </View>
+                    <View >
+                        {groups.map((gr, grIndex) =>
+                            <View key={grIndex}>
+                                <Text style={styles.name}>{letter[grIndex]} Group</Text>
+                                <View style={styles.group}>
+                                    {gr.map((g, gIndex) =>
+                                        <View key={gIndex} style={styles.team}>
+                                            <TextInput style={styles.name} value={g.name} onChangeText={text => changeTeamName(grIndex, gIndex, text)} />
+                                            {g.matches.map((match, matchIndex) =>
+                                                <TextInput
+                                                    key={matchIndex}
+                                                    style={styles.result}
+                                                    value={String(match)}
+                                                    onChangeText={text => updateMatch(grIndex, gIndex, matchIndex, text.trim())}
+                                                    keyboardType="numeric" />
+                                            )}
+                                            <Text style={styles.points}>{g.points}</Text>
+                                            <Text style={styles.points}>{g.place}</Text>
+                                        </View>)}
                                 </View>
-                            </Modal>
+                                <View style={styles.bin}>
+                                    <TouchableOpacity onPress={e => calcPlaces(grIndex)}><Text style={styles.buttonB}>Calc</Text></TouchableOpacity>
+                                    <TouchableOpacity onPress={_ => setDeleteGroup(true)}><Text style={styles.buttonR}>Delete</Text></TouchableOpacity>
+                                </View>
 
-                        </View>
-                    )}
-                </View>
+                                <Modal visible={deleteGroup} animationType="fade" style={styles.modal}>
+                                    <View style={styles.card}>
+                                        <Text style={styles.title}>Are you sure?</Text>
+                                        <View style={styles.bin}>
+                                            <TouchableOpacity onPress={_ => removeGroup(grIndex)}><Text style={styles.buttonR}>Yes</Text></TouchableOpacity>
+                                            <TouchableOpacity onPress={_ => setDeleteGroup(false)}><Text style={styles.buttonB}>Back</Text></TouchableOpacity>
+                                        </View>
+                                    </View>
+                                </Modal>
 
-                <View>
-                    <TouchableOpacity onPress={_ => setShowAddGroup(true)}><Text style={styles.button}>Add group</Text></TouchableOpacity>
-                </View>
-
-                <Modal visible={showAddGroup} animationType="fade" style={styles.modal}>
-                    <View style={styles.card}>
-
-                        <Text style={styles.title}>Create New Group</Text>
-                        {group.map((name, index) =>
-                            <View key={index} style={styles.line}>
-                                <TextInput style={styles.input} onChange={e => addTeamName(e.target.value, index)} placeholder="Team name" value={name} />
-                                <TouchableOpacity onPress={_ => removeTeam(index)}><Text style={styles.buttonR}>Remove</Text></TouchableOpacity>
-                            </View>)}
-
-                        <TouchableOpacity onPress={_ => setGroup(g => [...g, ''])}><Text style={styles.button}>Add Team</Text></TouchableOpacity>
-                        <View style={styles.bin}>
-                            <TouchableOpacity onPress={addGroup}><Text style={styles.button}>Create</Text></TouchableOpacity>
-                            <TouchableOpacity onPress={_ => setShowAddGroup(false)}><Text style={styles.buttonB}>Back</Text></TouchableOpacity>
-                        </View>
-
+                            </View>
+                        )}
                     </View>
-                </Modal>
 
-            </View>
-        </ScrollView>
+                    <View>
+                        <TouchableOpacity onPress={_ => setShowAddGroup(true)}><Text style={styles.button}>Add group</Text></TouchableOpacity>
+                    </View>
+
+                    <Modal visible={showAddGroup} animationType="fade" style={styles.modal}>
+                        <View style={styles.card}>
+
+                            <Text style={styles.title}>Create New Group</Text>
+                            {group.map((name, index) =>
+                                <View key={index} style={styles.line}>
+                                    <TextInput style={styles.input} onChange={e => addTeamName(e.target.value, index)} placeholder="Team name" value={name} />
+                                    <TouchableOpacity onPress={_ => removeTeam(index)}><Text style={styles.buttonR}>Remove</Text></TouchableOpacity>
+                                </View>)}
+
+                            <TouchableOpacity onPress={_ => setGroup(g => [...g, ''])}><Text style={styles.button}>Add Team</Text></TouchableOpacity>
+                            <View style={styles.bin}>
+                                <TouchableOpacity onPress={addGroup}><Text style={styles.button}>Create</Text></TouchableOpacity>
+                                <TouchableOpacity onPress={_ => setShowAddGroup(false)}><Text style={styles.buttonB}>Back</Text></TouchableOpacity>
+                            </View>
+
+                        </View>
+                    </Modal>
+
+                </View>
+            </ScrollView>
+        </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         alignSelf: 'center',
         padding: '1%',
         backgroundColor: '#40b0cc80',
