@@ -6,7 +6,7 @@ import { useAudioPlayer } from 'expo-audio';
 const click = require('../../assets/sounds/click2.mp3');
 
 export default function Generator() {
-  
+
   const inputRef = useRef(null);
   const [pool, setPool] = useState([]);
   const [name, setName] = useState("");
@@ -39,10 +39,6 @@ export default function Generator() {
     };
     storeData();
   }, [pool]);
-
-  const addName = name => {
-    setName(n => name);
-  }
 
   const submitName = e => {
     player.seekTo(0);
@@ -100,12 +96,11 @@ export default function Generator() {
         style={styles.input}
         placeholder='Enter a name'
         value={name}
-        onChangeText={addName}
+        onChangeText={name => setName(n => name)}
       />
       <TouchableOpacity style={styles.button} onPress={_ => submitName(name)}><Text style={styles.buttonText}>Add name</Text></TouchableOpacity>
       <Text style={styles.namesTitle}>Name Pool</Text>
       <View style={styles.namePool}>
-
         {pool.map((p, i) =>
           <TouchableOpacity style={styles.name} key={i} onLongPress={_ => delete_name(p.name)}>
             <Text style={styles.name}>{i + 1}. {p.name}</Text>
