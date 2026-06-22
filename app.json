@@ -5,7 +5,7 @@
     "version": "1.0.5",
     "orientation": "portrait",
     "icon": "./assets/images/teamIcon.png",
-    "scheme": "TeamGenerator",
+    "scheme": "teamgenerator",
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true,
@@ -41,7 +41,8 @@
           "backgroundColor": "#ffffff"
         }
       ],
-      "expo-audio"
+      "expo-audio",
+      "expo-asset"
     ],
     "experiments": {
       "typedRoutes": true
