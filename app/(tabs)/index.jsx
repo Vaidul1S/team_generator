@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { SafeAreaView, Text, StyleSheet, Modal, TextInput, View, Alert, TouchableOpacity } from 'react-native';
+import { Text, StyleSheet, Modal, TextInput, View, Alert, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAudioPlayer } from 'expo-audio';
 
@@ -88,7 +88,7 @@ export default function Generator() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <Text style={styles.title}>Team Generator</Text>
 
       <TextInput
@@ -117,7 +117,7 @@ export default function Generator() {
       <TouchableOpacity style={styles.button} onPress={generate_teams}><Text style={styles.buttonText}>Generate Teams</Text></TouchableOpacity>
 
       <Modal visible={gt} animationType='fade'>
-        <SafeAreaView style={styles.modal}>
+        <View style={styles.modal}>
           <Text style={styles.title}>Teams</Text>
           <View style={styles.pool}>
             {teams.map((t, i) => (
@@ -131,10 +131,10 @@ export default function Generator() {
           </View>
           <TouchableOpacity style={styles.button} onPress={generate_teams}><Text style={styles.buttonText}>Generate Again</Text></TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={goBack}><Text style={styles.buttonText}>Go Back</Text></TouchableOpacity>
-        </SafeAreaView>
+        </View>
       </Modal>
 
-    </SafeAreaView>
+    </View>
   );
 }
 
@@ -168,8 +168,7 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,
     borderRadius: 10,
-    borderWidth: 0,
-    cursor: 'pointer',
+    borderWidth: 0,    
     backgroundColor: '#40b0cc',
     alignItems: 'center',
   },
@@ -183,12 +182,10 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,
     borderRadius: 10,
-    borderWidth: 0,
-    cursor: 'pointer',
+    borderWidth: 0,    
     backgroundColor: '#40b0cc',
     alignItems: 'center',
   },
-
   buttonText: {
     color: 'black',
     fontSize: 28,

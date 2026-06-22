@@ -1,11 +1,11 @@
-import { Text, StyleSheet, Image, SafeAreaView } from 'react-native';
+import { Text, StyleSheet, Image, View } from 'react-native';
 import { Link } from 'expo-router';
 import React from 'react';
 
 export default function Credits() {
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <Image
         source={require("../../assets/images/gg.jpg")}
         style={styles.image} />
@@ -16,7 +16,7 @@ export default function Credits() {
       <Text style={styles.text}>Added Tornament Bracket</Text>
       <Link style={styles.link} href='https://github.com/Vaidul1S' target='_blank'>GitHub Link</Link>
       <Text style={styles.text}>&copy; Vaidul1s {new Date().getFullYear()}</Text>
-    </SafeAreaView>
+    </View>
   )
 }
 
