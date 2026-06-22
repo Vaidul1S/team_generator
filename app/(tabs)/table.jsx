@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Modal, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Table() {
 
@@ -369,7 +368,7 @@ export default function Table() {
     }
 
     return (
-        <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
             <ScrollView>
                 <View >
                     <View >
@@ -436,17 +435,17 @@ export default function Table() {
 
                 </View>
             </ScrollView>
-        </SafeAreaView>
+        </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        width: '100%',
         alignSelf: 'center',
         padding: '1%',
-        backgroundColor: '#40b0cc80',
-        width: '100%',
+        backgroundColor: '#40b0cc80',        
     },
     group: {
         border: 'solid, 1px, #000000',
@@ -521,12 +520,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     card: {
+        flex: 1,
+        width: '100%',
         alignSelf: 'center',
         color: 'white',
         backgroundColor: '#194955',
-        padding: 10,
-        width: 420,
-        height: '100%',
+        padding: 10,        
         justifyContent: 'center',
     },
     title: {

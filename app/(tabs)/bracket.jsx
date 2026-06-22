@@ -1,7 +1,6 @@
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect, useState } from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Bracket() {
 
@@ -81,7 +80,7 @@ export default function Bracket() {
     };
 
     return (
-        <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
             <ScrollView>
                 <View style={styles.card}>
 
@@ -172,46 +171,39 @@ export default function Bracket() {
 
                 </View>
             </ScrollView>
-        </SafeAreaView>
+        </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
+        width: '100%',
         backgroundColor: '#40b0cc80',
     },
     card: {
-        flexDirection: 'column',
-        alignContent: 'space-around',
-        flexWrap: 'wrap',
-        width: '100%',
+        flex: 1, 
+        flexDirection: 'row',
+        justifyContent: 'space-around',              
     },
-    col: {
-        justifyContent: 'space-around',
-        height: '100%',
+    col: {               
+        justifyContent: 'space-around',        
         padding: '1%',
-        width: '33%',
-        backgroundColor: 'none',
+        width: '33%',        
     },
     row: {
         flexDirection: 'row',
-        justifyContent: 'space-around',
-        gap: '3%',
-        width: '100%',
-        backgroundColor: 'none',
+        justifyContent: 'space-around',              
     },
     text: {
         textAlign: 'center',
-        fontSize: '20px',
+        fontSize: 18,
         fontFamily: 'BrightAura',
-        color: '#000000',
-        width: '100%',
+        color: '#000000',        
     },
     point: {
         textAlign: 'center',
-        fontSize: '20px',
+        fontSize: 18,
         fontFamily: 'BrightAura',
         color: '#000000',
     },
@@ -220,9 +212,8 @@ const styles = StyleSheet.create({
     },
     title: {
         textAlign: 'center',
-        fontSize: '24px',
+        fontSize: 22,
         fontFamily: 'BrightAura',
-        color: '#000000',
-        width: '100%'
+        color: '#000000',        
     },
 });
