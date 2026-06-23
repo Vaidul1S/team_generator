@@ -3,6 +3,7 @@ import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { useEffect } from 'react';
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
@@ -13,7 +14,13 @@ export default function RootLayout() {
 
   if (!loaded) {
     return null;
+  };
+
+  useEffect(() => {
+  if (typeof document !== 'undefined') {
+    document.body.style.backgroundColor = '#102b33'; // your app's bg color
   }
+}, []);
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
