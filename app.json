@@ -12,9 +12,9 @@
       "bundleIdentifier": "com.anonymous.tGen",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
-      }
+      }      
     },
-    "android": {
+    "android": {      
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/teamIcon.png",
         "backgroundColor": "#ffffff"

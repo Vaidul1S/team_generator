@@ -9,9 +9,10 @@
       "distribution": "internal"
     },
     "preview": {
+      "node": "22.14.0",
       "distribution": "internal",
       "android": {
-        "buildType": "apk"
+        "buildType": "apk"          
       }
     },
     "production": {
