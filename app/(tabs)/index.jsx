@@ -77,8 +77,23 @@ export default function Generator() {
 
   const generate_mixes = _ => {
     player.seekTo(0);
-    player.play();
+    player.play();    
+
+    function shuffleMixes() {
+      const players = [...Object.values(pool)];
+
+      const first = players.slice(0, 4);
+      const second = players.slice(4);
     
+      for (let i = second.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [second[i], second[j]] = [second[j], second[i]];
+      }
+
+      return first.map((player, i) => [player, second[i]]);
+    }
+    setTeams(shuffleMixes());
+    setGt(true);
   }
 
   const goBack = _ => {
