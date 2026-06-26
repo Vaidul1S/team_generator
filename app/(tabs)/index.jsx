@@ -75,6 +75,12 @@ export default function Generator() {
     setGt(true);
   }
 
+  const generate_mixes = _ => {
+    player.seekTo(0);
+    player.play();
+    
+  }
+
   const goBack = _ => {
     player.seekTo(0);
     player.play();
@@ -113,7 +119,7 @@ export default function Generator() {
         <TouchableOpacity style={styles.button2} onPress={_ => setTeamSize(4)}><Text style={styles.buttonText}>4</Text></TouchableOpacity>
         <TouchableOpacity style={styles.button2} onPress={_ => setTeamSize(5)}><Text style={styles.buttonText}>5</Text></TouchableOpacity>
         <TouchableOpacity style={styles.button2} onPress={_ => setTeamSize(6)}><Text style={styles.buttonText}>6</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.button2} onPress={_ => setTeamSize(2)}><Text style={styles.buttonText}>M</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.button2} onPress={generate_mixes}><Text style={styles.buttonText}>M</Text></TouchableOpacity>
       </View>
       <TouchableOpacity style={styles.button} onPress={generate_teams}><Text style={styles.buttonText}>Generate Teams</Text></TouchableOpacity>
 
@@ -180,7 +186,7 @@ const styles = StyleSheet.create({
   },
   button2: {
     width: 50,
-    padding: 10,    
+    padding: 10,
     borderRadius: 10,
     borderWidth: 0,
     backgroundColor: '#40b0cc',
