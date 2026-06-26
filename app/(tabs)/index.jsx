@@ -71,7 +71,7 @@ export default function Generator() {
       }
       return array;
     }
-    setTeams(shuffleArray([...shuffle]));
+    setTeams(shuffleArray([...shuffle]));    
     setGt(true);
   }
 
@@ -92,7 +92,9 @@ export default function Generator() {
 
       return first.map((player, i) => [player, second[i]]);
     }
-    setTeams(shuffleMixes());
+    console.log(shuffleMixes());
+    
+    setTeams(shuffleMixes().flat());
     setGt(true);
   }
 
