@@ -11,7 +11,7 @@ export default function Credits() {
         style={styles.image} />
       <Text style={styles.text}>Simple team generator for pairing people into teams.</Text>
       <Text style={styles.text}>To delete name press long on a selected name.</Text>
-      <Text style={styles.text}>Version 1.05</Text>
+      <Text style={styles.text}>Version 1.06</Text>
       <Text style={styles.text}>Added Tornament Table</Text>
       <Text style={styles.text}>Added Tornament Bracket</Text>
       <Link style={styles.link} href='https://github.com/Vaidul1S' target='_blank'>GitHub Link</Link>

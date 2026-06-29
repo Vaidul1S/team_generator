@@ -11,6 +11,7 @@ export default function Generator() {
   const [pool, setPool] = useState([]);
   const [name, setName] = useState("");
   const [gt, setGt] = useState(false);
+  const [mix, setMix] = useState(false);
   const [teams, setTeams] = useState([]);
   const [size, setSize] = useState(2);
   const player = useAudioPlayer(click);
@@ -71,37 +72,33 @@ export default function Generator() {
       }
       return array;
     }
-    setTeams(shuffleArray([...shuffle]));    
+    setTeams(shuffleArray([...shuffle]));
     setGt(true);
   }
 
   const generate_mixes = _ => {
     player.seekTo(0);
-    player.play();    
-
+    player.play();
     function shuffleMixes() {
       const players = [...Object.values(pool)];
-
       const first = players.slice(0, 4);
       const second = players.slice(4);
-    
+
       for (let i = second.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [second[i], second[j]] = [second[j], second[i]];
       }
-
       return first.map((player, i) => [player, second[i]]);
     }
-    console.log(shuffleMixes());
-    
     setTeams(shuffleMixes().flat());
-    setGt(true);
+    setMix(true);
   }
 
   const goBack = _ => {
     player.seekTo(0);
     player.play();
-    setGt(false)
+    setGt(false);
+    setMix(false);
   }
 
   const setTeamSize = e => {
@@ -154,6 +151,24 @@ export default function Generator() {
             ))}
           </View>
           <TouchableOpacity style={styles.button} onPress={generate_teams}><Text style={styles.buttonText}>Generate Again</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={goBack}><Text style={styles.buttonText}>Go Back</Text></TouchableOpacity>
+        </View>
+      </Modal>
+
+      <Modal visible={mix} animationType='fade'>
+        <View style={styles.modal}>
+          <Text style={styles.title}>Teams</Text>
+          <View style={styles.pool}>
+            {teams.map((t, i) => (
+              <Text
+                key={i}
+                style={i % 2 ? styles.secondTeammate : styles.firstTeammate}
+              >
+                {i % size + 1}. {t.name}
+              </Text>
+            ))}
+          </View>
+          <TouchableOpacity style={styles.button} onPress={generate_mixes}><Text style={styles.buttonText}>Generate Again</Text></TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={goBack}><Text style={styles.buttonText}>Go Back</Text></TouchableOpacity>
         </View>
       </Modal>
