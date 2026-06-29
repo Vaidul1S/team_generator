@@ -379,7 +379,7 @@ export default function Table() {
                                     <View style={styles.legend}>
                                         <Text style={styles.titles}>Pts</Text>
                                         <Text style={styles.titles}>Plc</Text>
-                                        </View>
+                                    </View>
                                     {gr.map((g, gIndex) =>
                                         <View key={gIndex} style={styles.team}>
                                             <TextInput style={styles.name} value={g.name} onChangeText={text => changeTeamName(grIndex, gIndex, text)} />
