@@ -445,7 +445,7 @@ const styles = StyleSheet.create({
         width: '100%',
         alignSelf: 'center',
         padding: '1%',
-        backgroundColor: '#40b0cc80',        
+        backgroundColor: '#40b0cc80',
     },
     group: {
         border: 'solid, 1px, #000000',
@@ -525,7 +525,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         color: 'white',
         backgroundColor: '#194955',
-        padding: 10,        
+        padding: 10,
         justifyContent: 'center',
     },
     title: {
