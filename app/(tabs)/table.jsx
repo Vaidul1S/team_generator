@@ -376,6 +376,10 @@ export default function Table() {
                             <View key={grIndex}>
                                 <Text style={styles.name}>{letter[grIndex]} Group</Text>
                                 <View style={styles.group}>
+                                    <View style={styles.legend}>
+                                        <Text style={styles.titles}>Pts</Text>
+                                        <Text style={styles.titles}>Plc</Text>
+                                        </View>
                                     {gr.map((g, gIndex) =>
                                         <View key={gIndex} style={styles.team}>
                                             <TextInput style={styles.name} value={g.name} onChangeText={text => changeTeamName(grIndex, gIndex, text)} />
@@ -456,6 +460,20 @@ const styles = StyleSheet.create({
         border: 'solid, 1px, #000000',
         flexDirection: 'row',
         justifyContent: 'space-between',
+    },
+    legend: {
+        padding: 5,
+        border: 'solid, 1px, #000000',
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+    },
+    titles: {
+        fontSize: 14,
+        color: '#000000',
+        width: '8%',
+        textAlign: 'right',
+        fontFamily: 'BrightAura',
+        marginLeft: '1%',
     },
     name: {
         fontSize: 22,
