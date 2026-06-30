@@ -47,33 +47,32 @@ export default function Table() {
             })
         });
         setGroups(updatedGroups);
-    }, [showAddGroup])
+    }, [showAddGroup]);
 
     const addTeamName = (value, index) => {
         setGroup(g => g.map((team, i) => i === index ? value : team));
-    }
+    };
 
     const removeTeam = index => {
         setGroup(g => g.filter((_, i) => i !== index));
-    }
+    };
 
     const makeTable = _ => {
         return group.map(el => ({ name: el, matches: group.map(_ => '-'), points: 0, place: 'TBD' }));
-    }
+    };
 
     const addGroup = _ => {
         setGroups(g => [...g, makeTable()]);
         setGroup(['', '', '', '']);
         setShowAddGroup(false);
-    }
+    };
 
     const removeGroup = e => {
         setGroups(g => g.filter((_, i) => i !== e));
         setDeleteGroup(false);
-    }
+    };
 
     const updateMatch = (grIndex, gIndex, matchIndex, value) => {
-
         const updatedGroups = [...groups];
 
         updatedGroups[grIndex][gIndex].matches[matchIndex] = value;
@@ -349,7 +348,7 @@ export default function Table() {
 
         updatedGroups[grIndex][gIndex].name = text;
         setGroups(updatedGroups);
-    }
+    };
 
     const calcPlaces = e => {
         const updatedGroups = [...groups];
@@ -363,9 +362,8 @@ export default function Table() {
                 sorted.map((s, sIndex) => s.name === team.name ? team.place = sIndex + 1 : null);
             })
         });
-
         setGroups(updatedGroups);
-    }
+    };
 
     return (
         <View style={styles.container}>
