@@ -18,8 +18,7 @@ export default function Credits() {
       <Text style={styles.text}>&copy; Vaidul1s {new Date().getFullYear()}</Text>
     </View>
   )
-}
-
+};
 
 const styles = StyleSheet.create({
   container: {
