@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
   },
   link: {
     fontStyle: 'italic',
+    fontWeight: 800,
     color: 'lightblue',
     alignSelf: 'center',
     margin: 20,
