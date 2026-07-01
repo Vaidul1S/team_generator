@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Team Generator',
       theme: ThemeData(        
-        colorScheme: .fromSeed(seedColor: const Color.fromARGB(255, 58, 183, 221)),
+        colorScheme: .fromSeed(seedColor: const Color.fromRGBO(64, 176, 204, 1)),
       ),
-      home: const MyHomePage(title: 'Team Generator'),
+      home: const MyHomePage(title: 'Team Generator'),        
     );
   }
 }
@@ -42,25 +42,26 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(        
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,        
-        title: Text(widget.title),
+        title: Center(child: Text(widget.title)),
       ),
-      body: Center(        
+      body: Center(                
         child: Column(          
           mainAxisAlignment: .center,
           children: [
             const Text('You have pushed the + this many times:'),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: Theme.of(context).textTheme.headlineLarge,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        tooltip: 'Increment',
+        tooltip: 'Press',
         child: const Icon(Icons.add),
       ),
+      backgroundColor: Color.fromRGBO(43, 108, 124, 1),
     );
   }
 }
