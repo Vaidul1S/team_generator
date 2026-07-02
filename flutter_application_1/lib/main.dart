@@ -371,7 +371,7 @@ class _GeneratorState extends State<Generator> {
   }
 
   /// Full-screen overlay used for both the "generate teams" and
-  /// "generate mixes" result views (equivalent to the two RN <Modal>s).
+  /// "generate mixes" result views (equivalent to the two RN Modal's).
   Widget _buildResultsOverlay({
     required bool useSize,
     required VoidCallback onGenerateAgain,
