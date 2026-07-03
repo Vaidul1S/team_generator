@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/bracket.dart';
 import 'package:flutter_application_1/credits.dart';
+import 'package:flutter_application_1/table.dart';
 import 'generator.dart'; // if you split it into its own file
 
-List<Widget> pages = [
-  Generator(),
-  Credits()
-];
+List<Widget> pages = [Generator(), Credits(), TournamentTable(), Bracket()];
 void main() {
   runApp(const MyApp());
 }
@@ -31,7 +30,7 @@ class _NavClassState extends State<NavClass> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: currentIndex == 0 ? Center(child: Generator()) : null,
+      body: Center(child: pages[currentIndex]),
 
       bottomNavigationBar: NavigationBar(
         backgroundColor: Colors.black,
