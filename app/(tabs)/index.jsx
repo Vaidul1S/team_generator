@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
     margin: 10,
     borderRadius: 10,
     borderWidth: 0,
-    backgroundColor: '#40b0cc',
+    backgroundColor: 'rgb(64, 176, 204)',
     alignItems: 'center',
   },
   sizes: {
@@ -253,7 +253,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-between',
-    backgroundColor: '#2b6c7c',
+    backgroundColor: 'rgb(43, 108, 124)',
   },
   pool: {
     flex: 1,

@@ -11,8 +11,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Team Generator',
-      home: const Generator(),
+      home: Scaffold(
+        appBar: AppBar(title: Text('Team Generator'), centerTitle: true),
+        bottomNavigationBar: NavigationBar(
+          destinations: [
+            NavigationDestination(icon: Icon(Icons.home), label: 'Generator'),
+            NavigationDestination(
+              icon: Icon(Icons.credit_score),
+              label: 'Credits',
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
