@@ -33,24 +33,45 @@ class _NavClassState extends State<NavClass> {
       body: Center(child: pages[currentIndex]),
 
       bottomNavigationBar: NavigationBar(
-        backgroundColor: const Color.fromRGBO(37, 37, 37, 1),
-        indicatorColor: Color.fromRGBO(226, 11, 11, 0),
+        backgroundColor: const Color.fromRGBO(7, 7, 7, 1),
+        indicatorColor: Color.fromRGBO(75, 75, 75, 0.75),
         labelTextStyle: WidgetStatePropertyAll(
           TextStyle(
-            color: const Color.fromRGBO(255, 255, 255, 0.25),
+            color: const Color.fromRGBO(255, 255, 255, 0.5),
             fontFamily: 'BrightAura',
           ),
         ),
         destinations: [
-          NavigationDestination(icon: Icon(Icons.shuffle), label: 'Generator'),
           NavigationDestination(
-            icon: Icon(Icons.copyright_outlined),
+            icon: Icon(
+              Icons.shuffle,
+              color: Color.fromRGBO(255, 255, 255, 0.5),
+            ),
+            label: 'Generator',
+          ),
+          NavigationDestination(
+            icon: Icon(
+              Icons.copyright_outlined,
+              color: Color.fromRGBO(255, 255, 255, 0.5),
+            ),
             label: 'Credits',
           ),
-          NavigationDestination(icon: Icon(Icons.table_view), label: 'Table'),
-          NavigationDestination(icon: Icon(Icons.mediation), label: 'Bracket'),
+          NavigationDestination(
+            icon: Icon(
+              Icons.table_view,
+              color: Color.fromRGBO(255, 255, 255, 0.5),
+            ),
+            label: 'Table',
+          ),
+          NavigationDestination(
+            icon: Icon(
+              Icons.mediation,
+              color: Color.fromRGBO(255, 255, 255, 0.5),
+            ),
+            label: 'Bracket',
+          ),
         ],
-        onDestinationSelected: (int value) {          
+        onDestinationSelected: (int value) {
           setState(() {
             currentIndex = value;
           });
