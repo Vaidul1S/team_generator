@@ -35,6 +35,12 @@ class _NavClassState extends State<NavClass> {
       bottomNavigationBar: NavigationBar(
         backgroundColor: const Color.fromRGBO(37, 37, 37, 1),
         indicatorColor: Color.fromRGBO(226, 11, 11, 0),
+        labelTextStyle: WidgetStatePropertyAll(
+          TextStyle(
+            color: const Color.fromRGBO(255, 255, 255, 0.25),
+            fontFamily: 'BrightAura',
+          ),
+        ),
         destinations: [
           NavigationDestination(icon: Icon(Icons.shuffle), label: 'Generator'),
           NavigationDestination(
@@ -44,7 +50,7 @@ class _NavClassState extends State<NavClass> {
           NavigationDestination(icon: Icon(Icons.table_view), label: 'Table'),
           NavigationDestination(icon: Icon(Icons.mediation), label: 'Bracket'),
         ],
-        onDestinationSelected: (int value) {
+        onDestinationSelected: (int value) {          
           setState(() {
             currentIndex = value;
           });
