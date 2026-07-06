@@ -33,7 +33,8 @@ class _NavClassState extends State<NavClass> {
       body: Center(child: pages[currentIndex]),
 
       bottomNavigationBar: NavigationBar(
-        backgroundColor: Colors.black,
+        backgroundColor: const Color.fromRGBO(37, 37, 37, 1),
+        indicatorColor: Color.fromRGBO(226, 11, 11, 0),
         destinations: [
           NavigationDestination(icon: Icon(Icons.shuffle), label: 'Generator'),
           NavigationDestination(
