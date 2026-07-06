@@ -35,7 +35,7 @@ class _NavClassState extends State<NavClass> {
       bottomNavigationBar: NavigationBar(
         backgroundColor: Colors.black,
         destinations: [
-          NavigationDestination(icon: Icon(Icons.home), label: 'Generator'),
+          NavigationDestination(icon: Icon(Icons.shuffle), label: 'Generator'),
           NavigationDestination(
             icon: Icon(Icons.copyright_outlined),
             label: 'Credits',
