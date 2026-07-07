@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:team_generator/bracket.dart';
 import 'package:team_generator/credits.dart';
 import 'package:team_generator/table.dart';
-import 'generator.dart'; // if you split it into its own file
+import 'package:team_generator/generator.dart'; 
 
 List<Widget> pages = [Generator(), Credits(), TournamentTable(), Bracket()];
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: NavClass());
+    return MaterialApp(title: 'Team Generator', home: NavClass());
   }
 }
 
