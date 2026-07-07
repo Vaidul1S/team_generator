@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/bracket.dart';
-import 'package:flutter_application_1/credits.dart';
-import 'package:flutter_application_1/table.dart';
+import 'package:team_generator/bracket.dart';
+import 'package:team_generator/credits.dart';
+import 'package:team_generator/table.dart';
 import 'generator.dart'; // if you split it into its own file
 
 List<Widget> pages = [Generator(), Credits(), TournamentTable(), Bracket()];
