@@ -1,27 +1,3 @@
-// Notes on conversion decisions (see bottom of file for a longer explanation):
-// - Renamed the widget from `Table` to `TournamentTable` since `Table`
-//   collides with Flutter's built-in Table widget.
-// - RN's AsyncStorage -> shared_preferences, using the same 'table' key.
-// - RN's `Modal` overlays -> Flutter `showDialog`, since Flutter dialogs are
-//   the idiomatic equivalent and avoid a subtle RN bug where all groups'
-//   delete-confirmation Modals shared one boolean and would overlap.
-// - JS loose equality ('3' == 3) has no Dart equivalent, so match values are
-//   parsed with int.tryParse/double.tryParse before comparing.
-// - JS `Number('-')` / `Number('#')` are NaN and NaN propagates through sums;
-//   this is replicated using Dart's `double.nan`, which behaves the same way
-//   under IEEE-754 arithmetic.
-// - The original hardcodes the "mirror match result" logic for team pairs
-//   (0,1) (0,2) (0,3) (1,2) (1,3) (2,3) (0,4) (1,4) (2,4) (3,4), i.e. every
-//   pair for up to 5 teams. That's been generalized into nested loops over
-//   all pairs (i, j) with i < j, which is equivalent but also safely
-//   supports group sizes other than 4 or 5 without out-of-bounds errors
-//   (the original would throw/crash on a 4-team group in one branch).
-// - Per-cell TextEditingControllers are managed in a small internal
-//   StatefulWidget (_TeamRow) with FocusNodes, so a value only gets
-//   overwritten from state when the field isn't currently focused. This
-//   avoids the classic Flutter bug of losing cursor position/focus when a
-//   parent rebuilds and creates a fresh TextEditingController every build.
-
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -124,9 +100,8 @@ class _TournamentTableScreenState extends State<TournamentTable> {
   }
 
   // ---- match-result mirroring -------------------------------------------
-
   // Propagates results from the upper triangle (i < j) to the lower
-  // triangle within a single group's team list.
+
   void _reflectForward(List<Team> team) {
     for (int i = 0; i < team.length; i++) {
       for (int j = i + 1; j < team.length; j++) {
@@ -481,7 +456,7 @@ class _TournamentTableScreenState extends State<TournamentTable> {
     return Container(
       color: const Color.fromRGBO(43, 108, 124, 1),
       padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 20),
-      width: double.infinity,         
+      width: double.infinity,
       alignment: Alignment.topCenter,
       child: SingleChildScrollView(
         child: Column(
@@ -552,12 +527,20 @@ class _TournamentTableScreenState extends State<TournamentTable> {
                   children: const [
                     Text(
                       'Pts',
-                      style: TextStyle(fontSize: 14, color: Colors.black, fontFamily: 'BrightAura'),
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black,
+                        fontFamily: 'BrightAura',
+                      ),
                     ),
                     SizedBox(width: 10),
                     Text(
                       'Plc',
-                      style: TextStyle(fontSize: 14, color: Colors.black, fontFamily: 'BrightAura'),
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black,
+                        fontFamily: 'BrightAura',
+                      ),
                     ),
                   ],
                 ),
@@ -620,9 +603,6 @@ class _TournamentTableScreenState extends State<TournamentTable> {
   }
 }
 
-// Owns its own TextEditingControllers/FocusNodes so typing doesn't get
-// interrupted by parent rebuilds, and so results computed elsewhere
-// (mirrored match values) still show up once the field loses focus.
 class _TeamRow extends StatefulWidget {
   final Team team;
   final int grIndex;

@@ -14,12 +14,12 @@ class Credits extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(29, 29, 29, 1),      
+      backgroundColor: const Color.fromRGBO(29, 29, 29, 1),
       body: Padding(
         padding: const EdgeInsets.only(bottom: 10),
-        child: Container(         
+        child: Container(
           alignment: Alignment.bottomCenter,
-          child: Column(          
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               ClipRRect(

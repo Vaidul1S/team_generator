@@ -28,8 +28,8 @@ class _GeneratorState extends State<Generator> {
   final AudioPlayer _audioPlayer = AudioPlayer();
 
   List<Player> pool = [];
-  bool gt = false; 
-  bool mix = false; 
+  bool gt = false;
+  bool mix = false;
   List<Player> teams = [];
   int size = 2;
 
@@ -77,7 +77,7 @@ class _GeneratorState extends State<Generator> {
   }
 
   Future<void> _playClick() async {
-    try {      
+    try {
       await _audioPlayer.play(AssetSource('sounds/click2.mp3'));
     } catch (err) {
       debugPrint('Failed to play click sound: $err');
@@ -289,8 +289,8 @@ class _GeneratorState extends State<Generator> {
         ),
         Padding(
           padding: const EdgeInsets.all(10),
-          child: TextField(            
-            controller: _nameController,            
+          child: TextField(
+            controller: _nameController,
             focusNode: _inputFocusNode,
             onSubmitted: _submitName,
             style: const TextStyle(

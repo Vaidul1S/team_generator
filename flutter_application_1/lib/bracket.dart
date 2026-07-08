@@ -1,16 +1,3 @@
-// Notes:
-// - Reads the same 'table' key from shared_preferences that the Table
-//   screen writes, so the bracket is seeded from the group stage results.
-// - Only `name` and `place` are needed from the stored group data here, so
-//   a lightweight `_GroupTeam` model is used instead of reusing the full
-//   `Team` class from the table screen.
-// - `array.sort((a, b) => a.place - b.place)` relies on JS's numeric
-//   sort semantics; since `place` can be the string 'TBD' before the group
-//   stage table has been "Calc"'d, this is replicated by treating any place
-//   that isn't a parseable number as sorting last (pushing non-numeric
-//   values towards the end, a practical stand-in for JS's inconsistent
-//   NaN-comparison behavior in Array.sort).
-
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
