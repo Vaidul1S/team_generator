@@ -273,7 +273,7 @@ class _GeneratorState extends State<Generator> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Container(
-          width: double.infinity,          
+          width: double.infinity,
           padding: const EdgeInsets.all(6),
           color: const Color(0x80000000),
           child: const Text(
@@ -372,12 +372,12 @@ class _GeneratorState extends State<Generator> {
     );
   }
 
-  // Full-screen overlay used for both the "generate teams" and"generate mixes" 
+  // Full-screen overlay used for both the "generate teams" and"generate mixes"
   Widget _buildResultsOverlay({
     required bool useSize,
     required VoidCallback onGenerateAgain,
   }) {
-    return Positioned.fill(      
+    return Positioned.fill(
       child: Material(
         color: const Color.fromRGBO(43, 108, 124, 1),
         child: SafeArea(

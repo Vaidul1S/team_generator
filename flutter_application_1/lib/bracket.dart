@@ -137,7 +137,7 @@ class _BracketScreenState extends State<Bracket> {
       width: double.infinity,
       child: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 100.0),
+          padding: const EdgeInsets.only(top: 30.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -153,11 +153,11 @@ class _BracketScreenState extends State<Bracket> {
   }
 
   Widget _buildRoundOf8Column() {
-    return Expanded(
+    return Expanded(      
       child: Padding(
         padding: const EdgeInsets.only(left: 8),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,          
           children: [
             _matchRow(
               leftLabel: '(A1) ${_bracketAt(0)}',
@@ -192,8 +192,9 @@ class _BracketScreenState extends State<Bracket> {
   Widget _buildSemifinalsColumn() {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 5),
         child: Column(
+          spacing: 70,
           mainAxisAlignment: MainAxisAlignment.spaceAround,          
           children: [
             _matchRow(
@@ -219,15 +220,19 @@ class _BracketScreenState extends State<Bracket> {
       child: Padding(
         padding: const EdgeInsets.only(right: 8),
         child: Column(
+          spacing: 40,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            const Text(
-              'Finals🏆',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.black,
-                fontFamily: 'BrightAura',
+            Padding(
+              padding: const EdgeInsets.only(top: 40),
+              child: const Text(
+                'Finals🏆',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.black,
+                  fontFamily: 'BrightAura',
+                ),
               ),
             ),
             _matchRow(
@@ -251,7 +256,7 @@ class _BracketScreenState extends State<Bracket> {
     VoidCallback? onRightTap,
   }) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16),
+      padding: const EdgeInsets.symmetric(vertical: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
