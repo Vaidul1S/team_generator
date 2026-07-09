@@ -377,7 +377,7 @@ class _GeneratorState extends State<Generator> {
     required bool useSize,
     required VoidCallback onGenerateAgain,
   }) {
-    return Positioned.fill(
+    return Positioned.fill(      
       child: Material(
         color: const Color.fromRGBO(43, 108, 124, 1),
         child: SafeArea(

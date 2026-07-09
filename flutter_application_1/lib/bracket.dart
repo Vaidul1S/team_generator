@@ -194,7 +194,7 @@ class _BracketScreenState extends State<Bracket> {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,          
           children: [
             _matchRow(
               leftLabel: '(Q1) ${semifinals[0]}',

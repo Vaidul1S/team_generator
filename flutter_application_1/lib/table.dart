@@ -250,6 +250,7 @@ class _TournamentTableScreenState extends State<TournamentTable> {
                         children: [
                           Expanded(
                             child: TextField(
+                              textCapitalization: TextCapitalization.words,
                               controller: newTeamControllers[index],
                               style: const TextStyle(
                                 color: Colors.white70,
@@ -528,7 +529,7 @@ class _TournamentTableScreenState extends State<TournamentTable> {
                     Text(
                       'Pts',
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 10,
                         color: Colors.black,
                         fontFamily: 'BrightAura',
                       ),
@@ -537,7 +538,7 @@ class _TournamentTableScreenState extends State<TournamentTable> {
                     Text(
                       'Plc',
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 10,
                         color: Colors.black,
                         fontFamily: 'BrightAura',
                       ),
