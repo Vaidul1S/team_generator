@@ -204,14 +204,14 @@ class _GeneratorState extends State<Generator> {
   Widget _sectionHeader(String text) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(7),
+      padding: const EdgeInsets.all(8),
       color: const Color(0x80000000),
       child: Text(
         text,
         textAlign: TextAlign.center,
         style: const TextStyle(
           color: Colors.white,
-          fontSize: 26,
+          fontSize: 30,
           fontFamily: 'BrightAura',
         ),
       ),
@@ -274,7 +274,7 @@ class _GeneratorState extends State<Generator> {
       children: [
         Container(
           width: double.infinity,
-          margin: const EdgeInsets.only(top: 12),
+          margin: const EdgeInsets.only(top: 10),
           padding: const EdgeInsets.all(6),
           color: const Color(0x80000000),
           child: const Text(
@@ -288,8 +288,9 @@ class _GeneratorState extends State<Generator> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
           child: TextField(
+            textCapitalization: TextCapitalization.words,
             controller: _nameController,
             focusNode: _inputFocusNode,
             onSubmitted: _submitName,
@@ -301,7 +302,7 @@ class _GeneratorState extends State<Generator> {
             decoration: InputDecoration(
               hintText: 'Enter a name',
               hintStyle: const TextStyle(color: Colors.white70),
-              contentPadding: const EdgeInsets.all(10),
+              contentPadding: const EdgeInsets.all(12),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: const BorderSide(color: Colors.white, width: 2),
@@ -351,9 +352,9 @@ class _GeneratorState extends State<Generator> {
         ),
         _sectionHeader('Team Size: $size'),
         Padding(
-          padding: const EdgeInsets.only(top: 5),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               for (final n in [2, 3, 4, 5, 6])
                 _sizeButton(n.toString(), () => _setTeamSize(n)),
@@ -384,7 +385,7 @@ class _GeneratorState extends State<Generator> {
             children: [
               Container(
                 width: double.infinity,
-                margin: const EdgeInsets.only(top: 40),
+                margin: const EdgeInsets.only(top: 20),
                 padding: const EdgeInsets.all(6),
                 color: const Color(0x80000000),
                 child: const Text(
