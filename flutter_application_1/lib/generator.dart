@@ -204,7 +204,7 @@ class _GeneratorState extends State<Generator> {
   Widget _sectionHeader(String text) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.all(9),
       color: const Color(0x80000000),
       child: Text(
         text,
@@ -273,8 +273,7 @@ class _GeneratorState extends State<Generator> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Container(
-          width: double.infinity,
-          margin: const EdgeInsets.only(top: 10),
+          width: double.infinity,          
           padding: const EdgeInsets.all(6),
           color: const Color(0x80000000),
           child: const Text(
@@ -326,33 +325,36 @@ class _GeneratorState extends State<Generator> {
           ),
         ),
         _sectionHeader('Name Pool'),
-        SizedBox(
-          height: 270,
-          child: Wrap(
-            alignment: WrapAlignment.start,
-            direction: Axis.vertical,
-            children: [
-              for (var i = 0; i < pool.length; i++)
-                GestureDetector(
-                  onLongPress: () => _deleteName(pool[i].name),
-                  child: Container(
-                    width: 170,
-                    padding: const EdgeInsets.all(3),
-                    child: Text(
-                      '${i + 1}. ${pool[i].name}',
-                      style: const TextStyle(
-                        fontSize: 24,
-                        fontFamily: 'BrightAura',
+        Padding(
+          padding: const EdgeInsets.all(5),
+          child: SizedBox(
+            height: 260,
+            child: Wrap(
+              alignment: WrapAlignment.start,
+              direction: Axis.vertical,
+              children: [
+                for (var i = 0; i < pool.length; i++)
+                  GestureDetector(
+                    onLongPress: () => _deleteName(pool[i].name),
+                    child: Container(
+                      width: 170,
+                      padding: const EdgeInsets.all(3),
+                      child: Text(
+                        '${i + 1}. ${pool[i].name}',
+                        style: const TextStyle(
+                          fontSize: 24,
+                          fontFamily: 'BrightAura',
+                        ),
                       ),
                     ),
                   ),
-                ),
-            ],
+              ],
+            ),
           ),
         ),
         _sectionHeader('Team Size: $size'),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+          padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -370,8 +372,7 @@ class _GeneratorState extends State<Generator> {
     );
   }
 
-  /// Full-screen overlay used for both the "generate teams" and
-  /// "generate mixes" result views (equivalent to the two RN Modal's).
+  // Full-screen overlay used for both the "generate teams" and"generate mixes" 
   Widget _buildResultsOverlay({
     required bool useSize,
     required VoidCallback onGenerateAgain,
@@ -403,7 +404,7 @@ class _GeneratorState extends State<Generator> {
                   children: [
                     for (var i = 0; i < teams.length; i++)
                       Padding(
-                        padding: EdgeInsets.only(top: i % size == 0 ? 30 : 0),
+                        padding: EdgeInsets.only(top: i % size == 0 ? 25 : 0),
                         child: Text(
                           '${i % size + 1}. ${teams[i].name}',
                           style: const TextStyle(
