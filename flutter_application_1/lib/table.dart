@@ -518,29 +518,33 @@ class _TournamentTableScreenState extends State<TournamentTable> {
           decoration: BoxDecoration(border: Border.all(color: Colors.black)),
           child: Column(
             children: [
-              Container(
-                padding: const EdgeInsets.all(5),
+              Container(                
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.black),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: const [
-                    Text(
-                      'Pts',
-                      style: TextStyle(
-                        fontSize: 10,
-                        color: Colors.black,
-                        fontFamily: 'BrightAura',
+                    Padding(
+                      padding: EdgeInsets.all(5),
+                      child: Text(
+                        'Pts',
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Colors.black,
+                          fontFamily: 'BrightAura',
+                        ),
                       ),
                     ),
-                    SizedBox(width: 10),
-                    Text(
-                      'Plc',
-                      style: TextStyle(
-                        fontSize: 10,
-                        color: Colors.black,
-                        fontFamily: 'BrightAura',
+                    Padding(
+                      padding: EdgeInsets.all(5),
+                      child: Text(
+                        'Plc',
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Colors.black,
+                          fontFamily: 'BrightAura',
+                        ),
                       ),
                     ),
                   ],
@@ -559,7 +563,7 @@ class _TournamentTableScreenState extends State<TournamentTable> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
+          padding: const EdgeInsets.symmetric(vertical: 5),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -686,6 +690,7 @@ class _TeamRowState extends State<_TeamRow> {
           SizedBox(
             width: 110,
             child: TextField(
+              textCapitalization: TextCapitalization.words,
               controller: nameController,
               focusNode: nameFocus,
               style: const TextStyle(
