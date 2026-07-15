@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'bracket.dart';
 import 'credits.dart';
 import 'table.dart';
@@ -6,6 +7,8 @@ import 'generator.dart';
 
 List<Widget> pages = [Generator(), Credits(), TournamentTable(), Bracket()];
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(const MyApp());
 }
 
