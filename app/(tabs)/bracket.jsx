@@ -182,24 +182,24 @@ const styles = StyleSheet.create({
         backgroundColor: '#40b0cc80',
     },
     card: {
-        flex: 1, 
+        flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-around',              
+        justifyContent: 'space-around',
     },
-    col: {               
-        justifyContent: 'space-around',        
+    col: {
+        justifyContent: 'space-around',
         padding: '1%',
-        width: '33%',        
+        width: '33%',
     },
     row: {
         flexDirection: 'row',
-        justifyContent: 'space-around',              
+        justifyContent: 'space-around',
     },
     text: {
         textAlign: 'center',
         fontSize: 18,
         fontFamily: 'BrightAura',
-        color: '#000000',        
+        color: '#000000',
     },
     point: {
         textAlign: 'center',
@@ -214,6 +214,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 22,
         fontFamily: 'BrightAura',
-        color: '#000000',        
+        color: '#000000',
     },
 });
