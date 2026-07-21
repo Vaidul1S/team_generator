@@ -153,11 +153,11 @@ class _BracketScreenState extends State<Bracket> {
   }
 
   Widget _buildRoundOf8Column() {
-    return Expanded(      
+    return Expanded(
       child: Padding(
         padding: const EdgeInsets.only(left: 8),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,          
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             _matchRow(
               leftLabel: '(A1) ${_bracketAt(0)}',
@@ -195,7 +195,7 @@ class _BracketScreenState extends State<Bracket> {
         padding: const EdgeInsets.symmetric(horizontal: 5),
         child: Column(
           spacing: 70,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,          
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             _matchRow(
               leftLabel: '(Q1) ${semifinals[0]}',

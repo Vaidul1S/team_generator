@@ -6,7 +6,7 @@ class Team {
   String name;
   List<String> matches;
   double points;
-  dynamic place; // 'TBD' or an int
+  dynamic place;
 
   Team({
     required this.name,
@@ -99,9 +99,6 @@ class _TournamentTableScreenState extends State<TournamentTable> {
     }
   }
 
-  // ---- match-result mirroring -------------------------------------------
-  // Propagates results from the upper triangle (i < j) to the lower
-
   void _reflectForward(List<Team> team) {
     for (int i = 0; i < team.length; i++) {
       for (int j = i + 1; j < team.length; j++) {
@@ -120,7 +117,6 @@ class _TournamentTableScreenState extends State<TournamentTable> {
     }
   }
 
-  // Propagates results from the lower triangle to the upper triangle.
   void _reflectBackward(List<Team> team) {
     for (int i = 0; i < team.length; i++) {
       for (int j = i + 1; j < team.length; j++) {
@@ -518,7 +514,7 @@ class _TournamentTableScreenState extends State<TournamentTable> {
           decoration: BoxDecoration(border: Border.all(color: Colors.black)),
           child: Column(
             children: [
-              Container(                
+              Container(
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.black),
                 ),
