@@ -55,11 +55,11 @@ export default function Generator() {
       setName("")
     }
     inputRef.current?.blur();
-  }
+  };
 
   const delete_name = e => {
     setPool(p => p.filter(p => p.name !== e));
-  }
+  };
 
   const generate_teams = _ => {
     player.seekTo(0);
@@ -74,7 +74,7 @@ export default function Generator() {
     }
     setTeams(shuffleArray([...shuffle]));
     setGt(true);
-  }
+  };
 
   const generate_mixes = _ => {
     player.seekTo(0);
@@ -92,20 +92,20 @@ export default function Generator() {
     }
     setTeams(shuffleMixes().flat());
     setMix(true);
-  }
+  };
 
   const goBack = _ => {
     player.seekTo(0);
     player.play();
     setGt(false);
     setMix(false);
-  }
+  };
 
   const setTeamSize = e => {
     player.seekTo(0);
     player.play();
     setSize(e);
-  }
+  };
 
   return (
     <View style={styles.container}>
@@ -175,7 +175,7 @@ export default function Generator() {
 
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
